@@ -35,7 +35,7 @@ def main():
         except Exception as e:
             for fila in juego.tablero.contenedor:
                 print(fila)
-            print("Entrada inválida:", repr(e))
+            print("Entrada inválida:Ingrese una fila y columna valida (1-3)")
 
 if __name__ == "__main__":
     main()

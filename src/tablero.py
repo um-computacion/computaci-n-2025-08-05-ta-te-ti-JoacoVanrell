@@ -1,4 +1,3 @@
-# src/tablero.py
 from src.excepciones import PosOcupadaException, Ganador, Empate
 
 class Tablero:
@@ -18,9 +17,8 @@ class Tablero:
 
     def _validar_indices(self, fil, col):
         if not (0 <= fil <= 2 and 0 <= col <= 2):
-            raise IndexError("Fila/columna fuera de rango 1-3")
+            raise IndexError("Fila/columna fuera de rango.Ingrese un valor entre 1-3")
 
- 
     def colocar_ficha(self, fil, col, ficha):
         self._validar_indices(fil, col)
         if self.contenedor[fil][col] != "":
@@ -28,23 +26,19 @@ class Tablero:
         
         self.contenedor[fil][col] = ficha
 
-  
     def _hay_ganador(self):
         t = self.contenedor
 
-        
         for f in range(3):
             a, b, c = t[f][0], t[f][1], t[f][2]
             if a != "" and a == b == c:
                 return True
 
-        
         for c in range(3):
             a, b, d = t[0][c], t[1][c], t[2][c]
             if a != "" and a == b == d:
                 return True
 
-        
         centro = t[1][1]
         if centro != "":
             if centro == t[0][0] and centro == t[2][2]:

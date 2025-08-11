@@ -8,8 +8,8 @@ class Tateti:
         self.tablero = Tablero()
         self.jugadores = {}  
 
-    def crear_jugador(self, nom, ficha, estado):
-        jugador = Jugador(nom, ficha, estado)
+    def crear_jugador(self, nombre, ficha, estado):
+        jugador = Jugador(nombre, ficha, estado)
         self.jugadores[ficha] = jugador
 
     def jugar_turno(self, fila_1a3, col_1a3):
